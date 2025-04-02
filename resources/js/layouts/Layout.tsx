@@ -9,7 +9,7 @@ interface LayoutProps {
 
 const Layout = ({children}: LayoutProps) => {
   return (
-    <div className='flex flex-col md:flex-row'>
+    <div className='flex flex-col md:flex-row mr-2'>
         <Sidebar />
         <div className='flex flex-col w-full'>
         <Navbar />

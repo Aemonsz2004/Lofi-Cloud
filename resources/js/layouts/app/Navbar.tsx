@@ -2,7 +2,7 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <nav className=' flex w-full justify-between content-center mt-2'>
+        <nav className=' flex w-full justify-between content-center mt-2 mb-2'>
             <ul className='flex gap-5 items-center '>
                 <li>
                     <a className='flex gap-5 py-3 pl-6 pr-24 hover:bg-gray-700 rounded-md cursor-pointer'>
@@ -24,7 +24,7 @@ const Navbar = () => {
                     <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16.7356 16.1555C18.2732 14.5871 19.2213 12.4385 19.2213 10.0686C19.2213 5.2661 15.3281 1.37292 10.5256 1.37292C5.72316 1.37292 1.82999 5.2661 1.82999 10.0686C1.82999 14.8711 5.72316 18.7642 10.5256 18.7642C12.9582 18.7642 15.1574 17.7654 16.7356 16.1555ZM16.7356 16.1555L21.83 21.3729" stroke="#898989" stroke-width="2.02054" stroke-linecap="round"/>
                     </svg>
-                    <input className='focus:outline-none' type="text" placeholder="Search" />
+                    <input className='focus:outline-none' maxLength={100} type="text" placeholder="Search" />
                 </li>
             </ul>
             <ul className='flex gap-5 items-center'>
