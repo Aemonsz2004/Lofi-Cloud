@@ -1,11 +1,9 @@
 import React from 'react';
 
-interface MusicCardProps {
-    musicName: string;
-    musicDescription: string;
-}
 
-const MusicCard: React.FC<MusicCardProps> = ({ musicName, musicDescription }) => {
+
+
+const MusicCard = ({ musicName, musicDescription }) => {
     return (
         <div>
             <img className='block' src='' alt='music-icon' />

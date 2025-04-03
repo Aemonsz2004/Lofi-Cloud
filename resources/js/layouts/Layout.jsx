@@ -3,11 +3,9 @@ import Navbar from './app/Navbar'
 import Sidebar from './app/Sidebar'
 
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
 
-const Layout = ({children}: LayoutProps) => {
+
+const Layout = ({children}) => {
   return (
     <div className='flex flex-col md:flex-row mr-2'>
         <Sidebar />
