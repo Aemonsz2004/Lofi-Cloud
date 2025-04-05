@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './app/Navbar'
 import Sidebar from './app/Sidebar'
 
@@ -6,11 +6,16 @@ import Sidebar from './app/Sidebar'
 
 
 const Layout = ({children}) => {
+
+
+
+
+
   return (
     <div className='flex flex-col md:flex-row mr-2'>
-        <Sidebar />
+        <Sidebar/>
         <div className='flex flex-col w-full'>
-        <Navbar />
+        <Navbar/>
             {children}
         </div>
     </div>

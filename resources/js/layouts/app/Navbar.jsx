@@ -1,6 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Navbar = () => {
+
+
+
+const [isFriendSidebarOpen,setIsFriendSideBarOpen] = useState(false)
+
+const handleFriendIconClick = () => {
+    setIsFriendSideBarOpen(!isFriendSidebarOpen)
+    console.log('isFriendSIdeBarOpen:', isFriendSidebarOpen)
+}
+
+
+
+
     return (
         <nav className=' flex w-full justify-between content-center mt-2 mb-2'>
             <ul className='flex gap-5 items-center '>
@@ -27,12 +40,25 @@ const Navbar = () => {
                     <input className='focus:outline-none' maxLength={100} type="text" placeholder="Search" />
                 </li>
             </ul>
+
+
+
             <ul className='flex gap-5 items-center'>
                 <li>
                     <a className='flex gap-5 p-2 hover:bg-gray-700 rounded-md cursor-pointer'>
                         <svg width="25" height="26" viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20.2303 18.0694H5.17458C3.98493 18.0694 3.33504 16.6819 4.09664 15.768L5.35115 14.2626C5.56652 14.0041 5.67406 13.6772 5.67078 13.3409C5.65014 11.2215 6.02221 3.3363 12.7024 3.3363C19.3826 3.3363 19.7547 11.2215 19.7341 13.3409C19.7308 13.6772 19.8383 14.0041 20.0537 14.2626L21.3082 15.768C22.0698 16.6819 21.4199 18.0694 20.2303 18.0694Z" stroke="#898989" strokeWidth="1.6838" strokeLinecap="round" strokeLinejoin="round"/>
                             <path d="M9.19458 20.8756C9.19458 20.8756 9.89616 22.9803 12.7025 22.9803C15.5088 22.9803 16.2103 20.8756 16.2103 20.8756" stroke="#898989" strokeWidth="1.6838" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a onClick={handleFriendIconClick} className='flex gap-5 p-2 hover:bg-gray-700 rounded-md cursor-pointer'>
+                        <svg width="35" height="26" viewBox="0 0 35 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M26.5783 7.10817C26.5783 8.96803 25.0706 10.4757 23.2107 10.4757C21.3509 10.4757 19.8431 8.96803 19.8431 7.10817C19.8431 5.24831 21.3509 3.7406 23.2107 3.7406C25.0706 3.7406 26.5783 5.24831 26.5783 7.10817Z" stroke="#898989" stroke-width="2.02054"/>
+                            <path d="M16.2913 16.2112L17.0411 15.7114C18.8681 14.4934 21.0148 13.8434 23.2107 13.8434C25.4065 13.8434 27.5532 14.4934 29.3802 15.7114L30.13 16.2112C31.0669 16.8358 31.6296 17.8873 31.6296 19.0132V20.6908C31.6296 21.5587 30.926 22.2623 30.0581 22.2623H23.2107H16.3633C15.4953 22.2623 14.7917 21.5587 14.7917 20.6908V19.0132C14.7917 17.8873 15.3545 16.8358 16.2913 16.2112Z" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.1594 7.10817C15.1594 8.96803 13.6517 10.4757 11.7919 10.4757C9.932 10.4757 8.42429 8.96803 8.42429 7.10817C8.42429 5.24831 9.932 3.7406 11.7919 3.7406C13.6517 3.7406 15.1594 5.24831 15.1594 7.10817Z" stroke="#898989" stroke-width="2.02054"/>
+                            <path d="M11.7918 13.8434V13.8434C9.59602 13.8434 7.44933 14.4934 5.62229 15.7114L4.8725 16.2112C3.93565 16.8358 3.37292 17.8873 3.37292 19.0132V20.6908C3.37292 21.5587 4.07652 22.2623 4.94446 22.2623H11.0054" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </a>
                 </li>

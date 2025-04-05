@@ -2,9 +2,13 @@ import Layout from '@/layouts/Layout'
 import React from 'react'
 import MusicBox from '../components/MusicBox'
 
+import friendImage from '../../../public/friend4.png'
 
-const Home = ({ tracks = [] }) => {
-    console.log(tracks)
+
+const Home = ({isFriendSidebarOpen}) => {
+
+
+
 
     return (
         <Layout>
@@ -51,34 +55,99 @@ const Home = ({ tracks = [] }) => {
                         </button>
                     </div>
                 </div>
-
                 <div>
-                    
-                </div>
-            </div>
-
-            <div className='flex border border-gray-700 border-opacity-25 px-5 py-2 rounded-xl'>
-                <h2>Friends Activity</h2>
-
-                <div className=''>
-                    <button title='add friend'>
-                        <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15.573 7.47023C15.573 9.33009 14.0653 10.8378 12.2055 10.8378C10.3456 10.8378 8.83789 9.33009 8.83789 7.47023C8.83789 5.61037 10.3456 4.10266 12.2055 4.10266C14.0653 4.10266 15.573 5.61037 15.573 7.47023Z" stroke="#898989" stroke-width="2.02054"/>
-                            <path d="M8.83797 14.2054L5.2862 16.5733C4.34935 17.1979 3.78662 18.2493 3.78662 19.3753V21.0528C3.78662 21.9208 4.49022 22.6244 5.35815 22.6244H18.0988" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M15.573 15.0475H18.0987M20.6244 15.0475H18.0987M18.0987 15.0475V12.5219M18.0987 15.0475V17.5732" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <button>
-                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.6676 4.15393L8.61629 9.20528M3.56494 14.2566L8.61629 9.20528M8.61629 9.20528L3.56494 4.15393M8.61629 9.20528L13.6676 14.2566" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
+                    {/* <MusicBox/> */}
                 </div>
             </div>
 
 
+{/* friend sidebar */}
+            <div className='flex flex-col w-full max-w-[360px] border border-gray-700 border-opacity-25 px-5 py-2 rounded-xl'>
+                <div className='flex justify-between items-center mb-10'>
+                    <h2>Friends Activity</h2>
+                    <div className='flex gap-5 items-center'>
+                        <button title='add friend'>
+                            <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15.573 7.47023C15.573 9.33009 14.0653 10.8378 12.2055 10.8378C10.3456 10.8378 8.83789 9.33009 8.83789 7.47023C8.83789 5.61037 10.3456 4.10266 12.2055 4.10266C14.0653 4.10266 15.573 5.61037 15.573 7.47023Z" stroke="#898989" stroke-width="2.02054"/>
+                                <path d="M8.83797 14.2054L5.2862 16.5733C4.34935 17.1979 3.78662 18.2493 3.78662 19.3753V21.0528C3.78662 21.9208 4.49022 22.6244 5.35815 22.6244H18.0988" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M15.573 15.0475H18.0987M20.6244 15.0475H18.0987M18.0987 15.0475V12.5219M18.0987 15.0475V17.5732" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                        <button>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.6676 4.15393L8.61629 9.20528M3.56494 14.2566L8.61629 9.20528M8.61629 9.20528L3.56494 4.15393M8.61629 9.20528L13.6676 14.2566" stroke="#898989" stroke-width="2.02054" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
 
+                <ul className='flex flex-col gap-8'>
+                    <li>
+                        <div className='flex gap-3'>
+                            <img className='object-cover w-auto h-[40px]' alt='friend-profile-icon' src={friendImage} lazy/>
+                            <div className='flex flex-col'>
+                                <span >Friend name</span>
+                                <div className='flex gap-3 items-center'>
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.41724 12.323V8.23997M5.87149 12.323V1.55859M10.3257 12.323V5.64166" stroke="#1ED760" stroke-width="1.48475" stroke-linecap="round"/>
+                                    </svg>
+                                    <div className='flex items-center gap-3'>
+                                        <span>Goosebumps</span>
+                                            <svg width="3" height="4" viewBox="0 0 3 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="1.5" cy="2" r="1.5" fill="#898989"/>
+                                            </svg>
+                                        <span className='text-gray-400'>Travis Scott</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className='flex gap-3'>
+                            <img className='object-cover w-auto h-[40px]' alt='friend-profile-icon' src={friendImage} lazy/>
+                            <div className='flex flex-col'>
+                                <span >Friend name</span>
+                                <div className='flex gap-3 items-center'>
+                                    <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.41724 12.323V8.23997M5.87149 12.323V1.55859M10.3257 12.323V5.64166" stroke="#1ED760" stroke-width="1.48475" stroke-linecap="round"/>
+                                    </svg>
+                                    <div className='flex items-center gap-3'>
+                                        <span>Goosebumps</span>
+                                            <svg width="3" height="4" viewBox="0 0 3 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="1.5" cy="2" r="1.5" fill="#898989"/>
+                                            </svg>
+                                        <span className='text-gray-400'>Travis Scott</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div className='flex gap-3'>
+                            <img className='object-cover w-auto h-[40px]' alt='friend-profile-icon' src={friendImage} lazy/>
+                            <div className='flex flex-col'>
+                                <span >Friend name</span>
+                                <div className='flex gap-3 items-center'>
+                                    {/* <svg width="12" height="14" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.41724 12.323V8.23997M5.87149 12.323V1.55859M10.3257 12.323V5.64166" stroke="#1ED760" stroke-width="1.48475" stroke-linecap="round"/>
+                                    </svg> */}
+                                    <span className='text-gray-400'>1hr</span>
+                                    <div className='flex items-center gap-3'>
+                                        <span>Goosebumps</span>
+                                            <svg width="3" height="4" viewBox="0 0 3 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="1.5" cy="2" r="1.5" fill="#898989"/>
+                                            </svg>
+                                        <span className='text-gray-400'>Travis Scott</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
+
+
+        </div>
         </Layout>
     )
 }

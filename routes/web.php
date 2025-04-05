@@ -11,3 +11,13 @@ Route::get('Home', function () {
     return Inertia::render('Home');
 })->name('Home');
 
+
+Route::get('Search', function () {
+    return Inertia::render('Search');
+})->name('Search');
+
+
+Route::get('Library', function () {
+    return Inertia::render('Library');
+})->name('Library');
+
