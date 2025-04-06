@@ -15,7 +15,6 @@ class Home extends Controller
         $clientId = '9a3da71c';
         $response = Http::get("https://api.jamendo.com/v3.0/tracks/", [
             'client_id' => $clientId,
-            'limit' => 10,
             'order' => 'popularity_total',
             'format' => 'json'
         ]);
@@ -26,4 +25,7 @@ class Home extends Controller
             'tracks' => $tracks,
         ]);
     }
+
+
+  
 }

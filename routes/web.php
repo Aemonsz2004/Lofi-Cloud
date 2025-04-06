@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Track;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -21,3 +22,6 @@ Route::get('Library', function () {
     return Inertia::render('Library');
 })->name('Library');
 
+
+
+Route::get('/track/{trackId}', [Track::class, 'getTrack'])->name('getTrack');
